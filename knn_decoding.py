@@ -102,7 +102,7 @@ class kNNDecoder:
 
         # Using the frames of knn_frames, we can now assign the barcode to each knn_group
         barcode_set = []
-        for frames_set in tqdm(self.data.knn_frames, desc='Assigning barcodes'):
+        for frames_set in tqdm(self.data.knn_frames, desc='Assigning barcodes', disable=(not self.verbose)):
             barcode = map_frames_to_bin(frames_set, self.barcode_length)
             barcode_set.append(barcode)
         self.data['barcodes'] = barcode_set
@@ -125,7 +125,7 @@ class kNNDecoder:
             row_id += 1
 
         # Set the 'unconfirmed' as NaN in gene and nucleotide_ID
-        for point_index in tqdm(range(len(self.data)), desc='Set unconfirmed as NaN'):
+        for point_index in tqdm(range(len(self.data)), desc='Set unconfirmed as NaN', disable=(not self.verbose)):
             if self.data.loc[point_index, 'status'] == 'unconfirmed' or self.data.loc[point_index, 'gene'] == '':
                 self.data.loc[point_index, 'status'] = 'unconfirmed'
                 # self.data.loc[point_index, ('nucleotide_ID', 'gene')] = np.nan
@@ -157,7 +157,7 @@ class kNNDecoder:
         self.data['status'] = 'unconfirmed'
         # kNN validation
         index_counter = 0
-        for knn_group in tqdm(self.data.knn, desc='Validating data'):
+        for knn_group in tqdm(self.data.knn, desc='Validating data', disable=(not self.verbose)):
             # The group should only be checked, if its status is unconfirmed
             if self.data.loc[index_counter].status == 'unconfirmed':
                 knn_group_comparison = []
@@ -174,7 +174,7 @@ class kNNDecoder:
         # Get the unconfirmed points and see if any of them can match, and how many they are
         unconfirmed_ts = self.data[self.data.status == 'unconfirmed']
         knn_set_counter = []
-        for knn_set in tqdm(unconfirmed_ts.knn, desc='Going through unconfirmed points'):
+        for knn_set in tqdm(unconfirmed_ts.knn, desc='Going through unconfirmed points', disable=(not self.verbose)):
             knn_set_group = 0
             for other_knn_set in unconfirmed_ts.knn:
                 if knn_set == other_knn_set:
@@ -202,7 +202,7 @@ class kNNDecoder:
         # For the points with 3 knn-members, correct their barcode
         # TODO: There should be some kind of threshold for the distance?
         correctable_points = self.data[self.data.knn_set_group == 3]
-        for cor_point_index in tqdm(range(len(correctable_points)), desc='Correcting data'):
+        for cor_point_index in tqdm(range(len(correctable_points)), desc='Correcting data', disable=(not self.verbose)):
             hamming_dist_list = []
             for i in range(len(self.codebook.code_list)):
                 hamming_dist_list.append(hamming(
