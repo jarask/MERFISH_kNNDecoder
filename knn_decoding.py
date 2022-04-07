@@ -155,6 +155,8 @@ class kNNDecoder:
         """
         # Set all points to 'unconfirmed' for knn validation
         self.data['status'] = 'unconfirmed'
+        # Create knn set group column
+        self.data['knn_set_group'] = int(0)
         # kNN validation
         index_counter = 0
         for knn_group in tqdm(self.data.knn, desc='Validating data', disable=(not self.verbose)):
