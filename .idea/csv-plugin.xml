@@ -17,35 +17,147 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Data\p1_sigma2_amp5_bkg0\ground_truth.csv">
+        <entry key="\data\p10_sigma2\ground_truth.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\Data\p1_sigma2_amp5_bkg0\knn_decoding.csv">
+        <entry key="\data\p1_sigma2\a100_p1_bkg1000\knn_decoding.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\Data\p1_sigma2_amp5_bkg0\knn_decoding_original.csv">
+        <entry key="\data\p1_sigma2\a10_p1_bkg10\knn_decoding.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\Data\p1_sigma2_amp5_bkg0\tsoutput_p1_sigma2_amp5_bkg0.csv">
+        <entry key="\data\p1_sigma2\a10_p1_bkg10\tsoutput.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="\Data\p1_sigma2_amp5_bkg0\tsoutput_p1_sigma2_amp5_bkg0_original.csv">
+        <entry key="\data\p1_sigma2\a1_p1_bkg0\summarized_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a1_p1_bkg0\tsoutput.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a1_p1_bkg1000\knn_decoding.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a1_p1_bkg10\tsoutput.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a1_p1_bkg1\knn_decoding.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a1_p1_bkg1\tsoutput.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a5_p1_bkg0\knn_decoding.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a5_p1_bkg100\tsoutput.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a5_p1_bkg1\knn_decoding.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma2\a5_p1_bkg50\tsoutput.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma6\a1_p1_bkg50\summarized_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p1_sigma6\ground_truth.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p50_sigma2\a100_p50_bkg0\summarized_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p50_sigma2\a10_p50_bkg0\summarized_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p50_sigma2\a10_p50_bkg1000\summarized_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p50_sigma2\a5_p50_bkg1000\summarized_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\data\p50_sigma2\ground_truth.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
