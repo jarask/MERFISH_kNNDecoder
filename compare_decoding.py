@@ -8,12 +8,14 @@ def compare_decoding(amplitude, points_per_gene, bkg, sigma, search_tolerance):
     exp_name = 'a%s_p%s_bkg%s' % (amplitude, points_per_gene, bkg)
 
     # Get the number of detections from ThunderSTORM
-    ts_output_df = pd.read_csv('Data/p%s_sigma%s/%s/tsoutput.csv' % (points_per_gene, sigma, exp_name))
+    ts_output_df = pd.read_csv('data/p%s_sigma%s/%s/tsoutput.csv' % (points_per_gene, sigma, exp_name))
     len_ts_output = len(ts_output_df)
     del ts_output_df
 
-    knn_df = pd.read_csv('Data/p%s_sigma%s/%s/knn_decoding.csv' % (points_per_gene, sigma, exp_name), index_col=0)
+    knn_df = pd.read_csv('data/p%s_sigma%s/%s/knn_decoding.csv' % (points_per_gene, sigma, exp_name), index_col=0)
     knn_df = knn_df.loc[knn_df.status.isin(['confirmed', 'corrected'])]
+    knn_df = knn_df.reset_index()
+    del knn_df['index']
     knn_df.knn = knn_df.knn.astype('str')
     knn_df = knn_df.iloc[knn_df[['knn', 'gene']].drop_duplicates().index]
     knn_df = knn_df[['x [nm]', 'y [nm]', 'gene']]
@@ -27,7 +29,7 @@ def compare_decoding(amplitude, points_per_gene, bkg, sigma, search_tolerance):
         data_list[key]['used'] = False
 
     # Load in the ground truth
-    gt_df = pd.read_csv('Data/p%s_sigma%s/ground_truth.csv' % (points_per_gene, sigma), index_col=0)
+    gt_df = pd.read_csv('data/p%s_sigma%s/ground_truth.csv' % (points_per_gene, sigma), index_col=0)
     # Get the single features (their 1st occurrence) and sort by y
     gt_features = gt_df.iloc[gt_df[['y', 'x', 'target']].drop_duplicates().index]
     gt_features.sort_values(by='y', inplace=False)
@@ -118,8 +120,8 @@ def compare_decoding(amplitude, points_per_gene, bkg, sigma, search_tolerance):
         sum_df.loc['F1', key] = (2 * num_tp) / (2 * num_tp + num_fp + num_fn)
 
     # Save the two dfs
-    compare_df.to_csv('Data/p%s_sigma%s/%s/comparison.csv' % (points_per_gene, sigma, exp_name))
-    sum_df.to_csv('Data/p%s_sigma%s/%s/summarized_data.csv' % (points_per_gene, sigma, exp_name))
+    compare_df.to_csv('data/p%s_sigma%s/%s/comparison.csv' % (points_per_gene, sigma, exp_name))
+    sum_df.to_csv('data/p%s_sigma%s/%s/summarized_data.csv' % (points_per_gene, sigma, exp_name))
 
 
 if __name__ == '__main__':
