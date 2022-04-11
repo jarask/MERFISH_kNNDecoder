@@ -2,3 +2,10 @@
 /data/p1_sigma6/
 /data/p10_sigma2/
 /data/p50_sigma2/
+data/Figures/p10_sigma2.png
+data/Figures/p1_sigma2.png
+data/Figures/p1_sigma6.png
+data/Figures/p50_sigma2.png
+__pycache__/Codebook.cpython-38.pyc
+__pycache__/compare_decoding.cpython-38.pyc
+__pycache__/knn_decoding.cpython-38.pyc
