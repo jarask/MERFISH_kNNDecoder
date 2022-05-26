@@ -1,11 +1,10 @@
 import pandas as pd
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
-import scipy.io
 from scipy.spatial.distance import hamming
 from timeit import default_timer as timer
 from tqdm import tqdm
-import Codebook
+from kNNDecoder import Codebook
 
 pd.options.mode.chained_assignment = None  # default='warn'
 
