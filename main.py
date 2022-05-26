@@ -1,7 +1,6 @@
-import knn_decoding
+from kNNDecoder import knn_decoding
 import compare_decoding
 import pandas as pd
-import numpy as np
 import glob
 import os
 from tqdm import tqdm
