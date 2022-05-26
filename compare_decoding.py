@@ -31,8 +31,9 @@ def compare_decoding(amplitude, points_per_gene, bkg, sigma, search_tolerance):
     # Load in the ground truth
     gt_df = pd.read_csv('data/p%s_sigma%s/ground_truth.csv' % (points_per_gene, sigma), index_col=0)
     # Get the single features (their 1st occurrence) and sort by y
-    gt_features = gt_df.iloc[gt_df[['y', 'x', 'target']].drop_duplicates().index]
-    gt_features.sort_values(by='y', inplace=False)
+
+    gt_features = gt_df.iloc[gt_df[['y', 'x', 'target']].drop_duplicates().index].copy()
+    gt_features.sort_values(by='y', inplace=True)
     gt_features.reset_index(inplace=True)
     del gt_features['index']
 
@@ -125,4 +126,4 @@ def compare_decoding(amplitude, points_per_gene, bkg, sigma, search_tolerance):
 
 
 if __name__ == '__main__':
-    compare_decoding(amplitude=5, points_per_gene=1, bkg=0, sigma=2, search_tolerance=4)
+    compare_decoding(amplitude=5, points_per_gene=5, bkg=0, sigma=2, search_tolerance=3)
